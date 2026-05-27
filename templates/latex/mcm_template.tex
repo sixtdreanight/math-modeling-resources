@@ -1,0 +1,297 @@
+% ============================================================
+% MCM/ICM 美赛论文 LaTeX 模板
+% 适配 2026 年新规：25 页上限（含摘要和附录）
+% 使用 XeLaTeX 编译
+% ============================================================
+
+\documentclass[12pt]{article}
+
+% ========== 字体和编码 ==========
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage[utf8]{inputenc}
+
+% ========== 页面设置 ==========
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Team \# 2412345}   % 替换为你的队号
+\fancyhead[R]{MCM/ICM 20XX}
+\fancyfoot[C]{\thepage\ of \pageref{LastPage}}
+
+% ========== 数学公式 ==========
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[section]
+
+% ========== 图表 ==========
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+
+% ========== 超链接和引用 ==========
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% ========== 算法伪代码 ==========
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ========== 其他 ==========
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{rotating}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+% ========== 标题信息 ==========
+\title{\textbf{Your Paper Title Here}}
+\author{Team \# 2412345}
+\date{February 20XX}
+
+\begin{document}
+
+% ============================================================
+% 摘要页（单独占页，不计入正文，但计入 25 页限制）
+% ============================================================
+\maketitle
+\thispagestyle{empty}
+
+\begin{center}
+\rule{\textwidth}{0.5pt}
+\textbf{Summary}
+\rule{\textwidth}{0.5pt}
+\end{center}
+
+\vspace{6pt}
+
+% ---- 摘要正文 ----
+% 要点：问题重述 → 建模方法 → 主要结果 → 结论
+% 长度：一页以内
+% 注意：摘要是最重要的部分！评审先看摘要决定是否继续读下去
+
+Your summary goes here. A good summary includes:
+\begin{enumerate}
+    \item Problem restatement — what problem you solved
+    \item Methodology — what models you built (1-2 sentences each)
+    \item Key results — numerical results, key findings
+    \item Conclusion — significance and implications
+\end{enumerate}
+
+\textbf{Keywords}: model, algorithm, sensitivity analysis, ...
+
+\newpage
+
+% ============================================================
+% 正文
+% ============================================================
+
+\tableofcontents
+\newpage
+
+% --- 1. Introduction ---
+\section{Introduction}
+
+\subsection{Problem Background}
+Background information and context of the problem.
+
+\subsection{Problem Restatement}
+Restate the problem in your own words, breaking it down into sub-problems.
+
+\subsection{Literature Review}
+Brief review of existing approaches and their limitations.
+
+\subsection{Our Work}
+Summarize what you accomplished and highlight your innovations.
+Provide an overview of your modeling approach.
+
+% --- 2. Assumptions ---
+\section{Assumptions and Justifications}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Assumption 1}: Description. \textit{Justification}: Why this is reasonable.
+    \item \textbf{Assumption 2}: Description. \textit{Justification}: Why this is reasonable.
+    \item \textbf{Assumption 3}: Description. \textit{Justification}: Why this is reasonable.
+\end{itemize}
+
+% --- 3. Notations ---
+\section{Notations}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|l|l}
+\toprule
+\textbf{Symbol} & \textbf{Definition} & \textbf{Unit} \\
+\midrule
+$x_i$ & Description of variable & unit \\
+$y$ & Description of variable & unit \\
+$N$ & Total number of samples & — \\
+\bottomrule
+\end{tabular}
+\caption{Key notations used in this paper}
+\label{tab:notations}
+\end{table}
+
+% --- 4. Model I ---
+\section{Model I: [Model Name]}
+
+\subsection{Model Establishment}
+
+Describe the model: motivation, mathematical formulation, key equations.
+
+\begin{equation}
+    \label{eq:model1}
+    f(x) = ...
+\end{equation}
+
+Explain what each term in the equation represents.
+
+\subsection{Model Solution}
+
+How you solved the model — analytical or numerical method.
+
+\begin{algorithm}[H]
+\caption{Algorithm for solving Model I}
+\begin{algorithmic}[1]
+\State \textbf{Input}: parameters $x_1, x_2, ...$
+\State Step 1: Initialize parameters
+\State Step 2: Compute ...
+\State Step 3: Optimize ...
+\State \textbf{Output}: result $y$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Results and Analysis}
+
+Present results with figures and tables.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.7\textwidth]{figures/result1.png}
+    \caption{Results of Model I}
+    \label{fig:result1}
+\end{figure}
+
+% --- 5. Model II ---
+\section{Model II: [Model Name]}
+
+\subsection{Model Establishment}
+...
+
+\subsection{Model Solution}
+...
+
+\subsection{Results and Analysis}
+...
+
+% --- 6. Sensitivity Analysis (CRITICAL!) ---
+\section{Sensitivity Analysis}
+
+Sensitivity analysis is \textbf{required} for MCM/ICM papers.
+It demonstrates the robustness of your model.
+
+\subsection{Method}
+Describe your sensitivity analysis method (e.g., OAT, Morris, Sobol, Latin Hypercube Sampling).
+
+\subsection{Results}
+Show how results change when key parameters vary within reasonable ranges.
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.6\textwidth]{figures/sensitivity.png}
+    \caption{Sensitivity analysis results: effect of parameter $\alpha$ on output}
+    \label{fig:sensitivity}
+\end{figure}
+
+\subsection{Discussion}
+Interpret the sensitivity results. Are there any parameters the model is particularly sensitive to? What does this imply?
+
+% --- 7. Model Evaluation ---
+\section{Model Evaluation}
+
+\subsection{Strengths}
+\begin{itemize}
+    \item ...
+    \item ...
+\end{itemize}
+
+\subsection{Weaknesses and Future Work}
+\begin{itemize}
+    \item ...
+    \item ...
+\end{itemize}
+
+% --- 8. Conclusion ---
+\section{Conclusion}
+
+Summarize your work:
+\begin{enumerate}
+    \item What models you built
+    \item What results you achieved
+    \item What insights you gained
+\end{enumerate}
+
+% --- 9. References ---
+\begin{thebibliography}{99}
+
+\bibitem{ref1}
+Author, A. (Year). \textit{Title of the paper}. Journal Name, Volume(Issue), Pages.
+
+\bibitem{ref2}
+Author, B. (Year). \textit{Book Title}. Publisher.
+
+\bibitem{ref3}
+COMAP. (2026). MCM/ICM 2026 Contest Rules and Instructions.
+\url{https://www.comap.com/contests/mcm-icm}
+
+\end{thebibliography}
+
+% ============================================================
+% Appendix
+% ============================================================
+\newpage
+\appendix
+\section{Code}
+
+\subsection{Python Code — Model I}
+\begin{verbatim}
+# Your Python code here
+import numpy as np
+import pandas as pd
+
+def model_function(x):
+    return ...
+\end{verbatim}
+
+\subsection{MATLAB Code — Model II}
+\begin{verbatim}
+% Your MATLAB code here
+function y = model_function(x)
+    y = ...
+end
+\end{verbatim}
+
+\section{Additional Figures and Tables}
+
+% Additional supporting figures and tables
+
+\section{AI Usage Report}
+\textbf{AI Tools Used}: (e.g., ChatGPT, Claude, DeepSeek)
+
+\textbf{Purpose}: (e.g., literature review assistance, code debugging, language polishing)
+
+\textbf{Extent of Use}: Describe how AI was used and how originality was maintained.
+
+\vspace{12pt}
+\textit{All models and analyses presented in this paper are the original work of our team. AI tools were used only for [specific purposes] and all outputs were reviewed and validated by team members.}
+
+\end{document}
