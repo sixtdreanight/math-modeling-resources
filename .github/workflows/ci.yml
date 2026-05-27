@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Markdown links
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: yes
+          use-verbose-mode: no
+          config-file: .github/workflows/mlc_config.json
+
+      - name: Validate directory structure
+        run: |
+          echo "Checking directory structure..."
+          for dir in models algorithms competitions templates ai-tools tools data papers notes; do
+            if [ -d "$dir" ]; then
+              echo "  [OK] $dir/"
+            else
+              echo "  [MISSING] $dir/"
+            fi
+          done
+
+      - name: Check template files
+        run: |
+          errors=0
+          for f in templates/*.tex; do
+            [ -f "$f" ] && echo "  [OK] $f" || true
+          done
+          for f in templates/*.py; do
+            [ -f "$f" ] && echo "  [OK] $f" || true
+          done
