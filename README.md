@@ -1,134 +1,145 @@
-# 数学建模竞赛知识库
+**Language:** [English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-Hant.md) | [日本語](README.ja.md)
 
-面向**全类型数学建模竞赛**的通用知识库。以数学模型 + 代码实现为核心，论文写作为辅助，覆盖 Python 和 MATLAB 两种语言。
+# Mathematical Modeling Contest Knowledge Base
 
-## 目录结构
+A comprehensive knowledge base designed for **all types of mathematical modeling competitions**. Centered on mathematical models + code implementation, with thesis writing as a supplement, covering both Python and MATLAB.
+
+## Directory Structure
 
 ```
 math-modeling-kb/
-├── README.md                    ← 你在这里
-├── models/                      # 模型知识体系（按问题类型组织）
-│   ├── optimization/            # 优化与控制
-│   ├── evaluation/              # 评价与决策
-│   ├── prediction/              # 预测与预报
-│   ├── classification/          # 分类与判别
-│   ├── differential/            # 机理分析（微分方程/物理建模）
-│   ├── statistics/              # 统计与计量
-│   ├── simulation/              # 仿真与模拟
-│   └── auxiliary/               # 通用辅助方法
-├── algorithms/                  # 可运行代码
+├── README.md                    ← You are here
+├── models/                      # Model knowledge system (organized by problem type)
+│   ├── optimization/            # Optimization and Control
+│   ├── evaluation/              # Evaluation and Decision Making
+│   ├── prediction/              # Prediction and Forecasting
+│   ├── classification/          # Classification and Discrimination
+│   ├── differential/            # Mechanistic Analysis (Differential Equations / Physical Modeling)
+│   ├── statistics/              # Statistics and Econometrics
+│   ├── simulation/              # Simulation and Modeling
+│   └── auxiliary/               # General Auxiliary Methods
+├── algorithms/                  # Runnable code
 │   ├── python/
 │   └── matlab/
-├── competitions/                # 各赛事专项指南
-├── templates/                   # 论文/数据处理模板
+├── competitions/                # Competition-specific guides
+├── templates/                   # Thesis/Data processing templates
 │   ├── python/
 │   ├── matlab/
 │   └── latex/
-├── ai-tools/                    # ★ AI 辅助工具集（2026新增）
-│   ├── prompts/                 # 分阶段提示词模板
-│   ├── skills/                  # Claude Code Skill 配置
-│   └── workflow/                # AI 辅助全流程
-├── tools/                       # 工具脚本
-├── data/                        # 示例数据集
-├── papers/                      # 优秀论文分析笔记
-├── notes/                       # 学习笔记
-└── scripts/                     # 辅助脚本
+├── ai-tools/                    # ★ AI-Assisted Toolset (New in 2026)
+│   ├── prompts/                 # Stage-specific prompt templates
+│   ├── skills/                  # Claude Code Skill configurations
+│   └── workflow/                # AI-assisted full workflow
+├── tools/                       # Utility scripts
+├── data/                        # Sample datasets
+├── papers/                      # Excellent paper analysis notes
+├── notes/                       # Learning notes
+└── scripts/                     # Helper scripts
 ```
 
-## 赛事-方法速查矩阵
+## Competition-Method Quick Reference Matrix
 
-| 赛题特征 | 对应模型目录 | 优先查阅 |
-|---------|-------------|---------|
-| 需要找最优方案 | `models/optimization/` | linear_programming → multi_objective → intelligent_algorithm |
-| 需要排名/打分 | `models/evaluation/` | ahp → topsis → entropy_weight |
-| 预测未来趋势 | `models/prediction/` | grey_prediction → time_series → deep_learning_prediction |
-| 分类/聚类 | `models/classification/` | clustering → svm → xgboost_lightgbm |
-| 物理/工程建模 | `models/differential/` | ode_basics → pde_numerical → dimensional_analysis |
-| 政策评估/因果推断 | `models/statistics/` | did → panel_data → synthetic_control |
-| 不确定性/随机问题 | `models/simulation/` | monte_carlo → bootstrap |
-| 文本数据处理 | `models/classification/` | nlp_basics → clustering |
-| 金融数据 | `models/optimization/` + `models/statistics/` | portfolio_optimization → time_series |
-| 需要 AI 辅助 | `ai-tools/` | prompts/stage-prompts → skills/claude-skill |
+| Problem Feature | Corresponding Model Directory | Priority Reading Order |
+|---------------|-----------------------------|----------------------|
+| Need optimal solution | `models/optimization/` | linear_programming → multi_objective → intelligent_algorithm |
+| Need ranking/scoring | `models/evaluation/` | ahp → topsis → entropy_weight |
+| Predict future trends | `models/prediction/` | grey_prediction → time_series → deep_learning_prediction |
+| Classification/Clustering | `models/classification/` | clustering → svm → xgboost_lightgbm |
+| Physics/Engineering modeling | `models/differential/` | ode_basics → pde_numerical → dimensional_analysis |
+| Policy evaluation/Causal inference | `models/statistics/` | did → panel_data → synthetic_control |
+| Uncertainty/Stochastic problems | `models/simulation/` | monte_carlo → bootstrap |
+| Text data processing | `models/classification/` | nlp_basics → clustering |
+| Financial data | `models/optimization/` + `models/statistics/` | portfolio_optimization → time_series |
+| Need AI assistance | `ai-tools/` | prompts/stage-prompts → skills/claude-skill |
 
-## AI 辅助工具（2026 新增）
+## AI-Assisted Tools (New in 2026)
 
-美赛 2026 起明确允许使用 AI 工具。本仓库提供：
-- **[分阶段提示词模板](ai-tools/prompts/stage-prompts.md)** — 从选题到论文写作的完整提示词
-- **[去 AI 化写作技巧](ai-tools/prompts/anti-ai-writing.md)** — 40+ 技巧让 AI 写得不带 AI 味
-- **[Claude Code Skill](ai-tools/skills/claude-skill.md)** — 安装后可自动激活数学建模专业知识
-- **[AI 辅助全流程](ai-tools/workflow/ai-workflow.md)** — 96 小时时间线 + AI 检查清单
+Starting from MCM/ICM 2026, the use of AI tools is explicitly permitted. This repository provides:
+- **[Stage-Specific Prompt Templates](ai-tools/prompts/stage-prompts.md)** — Complete prompts from topic selection to thesis writing
+- **[De-AI-ification Writing Techniques](ai-tools/prompts/anti-ai-writing.md)** — 40+ techniques to make AI-generated text sound human-written
+- **[Claude Code Skill](ai-tools/skills/claude-skill.md)** — Automatically activates mathematical modeling expertise after installation
+- **[AI-Assisted Full Workflow](ai-tools/workflow/ai-workflow.md)** — 96-hour timeline + AI checklist
 
-## 覆盖赛事
+## Covered Competitions
 
-| 梯队 | 赛事 | 时间 | 核心题型 |
-|------|------|------|---------|
-| 1 | **MCM/ICM 美赛** | 1月底 | A连续 B离散 C大数据 D运筹 E环境 F政策 |
-| 1 | **CUMCM 国赛** | 9月中 | A工程机理 B优化决策 C数据分析 |
-| 1 | **华为杯 研赛** | 9月底 | 研究生级别，六大方向 |
-| 2 | **MathorCup 妈妈杯** | 4月中 | 企业实际问题（阿里、滴滴等出题） |
-| 2 | **统计建模大赛** | 5月 | 主题制，偏计量 DID/RDD/面板数据 |
-| 2 | **电工杯** | 5月底 | 电力/能源方向，免费 |
-| 2 | **深圳杯** | 7-8月 | 开放题，高难度 |
-| 2 | **APMCM 亚太赛** | 11月 | 全英文，美赛模拟 |
-| 专 | **泰迪杯** | 4月 | 大数据/数据挖掘 |
-| 专 | **大湾区杯** | 11月 | 金融数学建模 |
+| Tier | Competition | Time | Core Problem Types |
+|------|------------|------|-------------------|
+| 1 | **MCM/ICM** | Late January | A Continuous B Discrete C Data Insights D Operations Research E Environmental F Policy |
+| 1 | **CUMCM (China National)** | Mid-September | A Engineering Mechanism B Optimization Decision C Data Analysis |
+| 1 | **Huawei Cup (Graduate)** | Late September | Graduate level, six major directions |
+| 2 | **MathorCup** | Mid-April | Real-world corporate problems (set by Alibaba, Didi, etc.) |
+| 2 | **Statistics Modeling Contest** | May | Thematic, focuses on econometrics DID/RDD/Panel Data |
+| 2 | **Electrical Engineering Cup** | Late May | Power/Energy direction, free |
+| 2 | **Shenzhen Cup** | July-August | Open-ended problems, high difficulty |
+| 2 | **APMCM (Asia-Pacific)** | November | Full English, MCM simulation |
+| S | **Teddy Cup** | April | Big Data/Data Mining |
+| S | **Greater Bay Area Cup** | November | Financial Mathematical Modeling |
 
-详见 [`competitions/`](competitions/) 目录下各赛事专项指南。
+See detailed competition-specific guides under the [`competitions/`](competitions/) directory.
 
-## 使用指引
+## Usage Guide
 
-### 快速开始
+### Quick Start
 
-1. **确定赛题类型** → 查阅上方速查矩阵定位模型目录
-2. **阅读模型文档** → `models/<类别>/<模型名>.md`，了解原理和适用场景
-3. **运行代码示例** → `algorithms/{python,matlab}/` 下有独立可运行的实现
-4. **套用论文模板** → `templates/latex/` 有美赛/国赛论文模板
+1. **Determine the problem type** → Refer to the quick reference matrix above to locate the model directory
+2. **Read the model documentation** → `models/<category>/<model-name>.md` to understand principles and applicable scenarios
+3. **Run code examples** → `algorithms/{python,matlab}/` contains independently runnable implementations
+4. **Apply thesis templates** → `templates/latex/` contains MCM/CUMCM thesis templates
 
-### 模型文档结构
+### Model Document Structure
 
-每个 .md 文件包含：
-1. 模型原理（数学公式 + 直观解释）
-2. 适用场景（赛事题型 + 典型赛题举例）
-3. 建模步骤（分步说明）
-4. 代码实现（Python + MATLAB 关键片段）
-5. 注意事项（优缺点、常见坑、调参建议）
-6. 论文呈现建议（公式编号、图表类型、结论写法）
-7. 参考资料
+Each `.md` file contains:
+1. Model principles (mathematical formulas + intuitive explanations)
+2. Applicable scenarios (competition problem types + typical problem examples)
+3. Modeling steps (step-by-step instructions)
+4. Code implementation (Python + MATLAB key snippets)
+5. Important notes (pros and cons, common pitfalls, parameter tuning suggestions)
+6. Thesis presentation suggestions (equation numbering, chart types, conclusion writing)
+7. References
 
-### 代码使用
+### Code Usage
 
 ```bash
-# Python 示例
+# Python example
 python algorithms/python/grey_model.py
 
-# MATLAB 示例（在 MATLAB 中运行）
+# MATLAB example (run in MATLAB)
 run('algorithms/matlab/grey_model.m')
 ```
 
-每个文件包含 `if __name__ == '__main__':`（Python）或内置示例数据（MATLAB），可直接运行验证。
+Each file includes `if __name__ == '__main__':` (Python) or built-in example data (MATLAB), and can be run directly for verification.
 
-## 模型分类总览
+## Model Classification Overview
 
-### 优化与控制 — `models/optimization/`
-线性规划 · 整数规划 · 非线性规划 · 动态规划 · 多目标优化 · 图论优化 · 排队论 · 博弈论 · 投资组合 · 调度优化
+### Optimization and Control — `models/optimization/`
+Linear Programming · Integer Programming · Nonlinear Programming · Dynamic Programming · Multi-Objective Optimization · Graph Theory Optimization · Queuing Theory · Game Theory · Portfolio Optimization · Scheduling Optimization
 
-### 评价与决策 — `models/evaluation/`
-AHP · TOPSIS · 模糊综合评价 · 灰色关联 · 熵权法 · PCA · 数据包络分析(DEA) · 秩和比法 · 因子分析 · 组合评价
+### Evaluation and Decision Making — `models/evaluation/`
+AHP · TOPSIS · Fuzzy Comprehensive Evaluation · Grey Relational Analysis · Entropy Weight Method · PCA · Data Envelopment Analysis (DEA) · Rank Sum Ratio · Factor Analysis · Combined Evaluation
 
-### 预测与预报 — `models/prediction/`
-灰色预测 · 时间序列(ARIMA/SARIMA) · 回归分析 · 马尔可夫预测 · 神经网络预测 · 深度学习预测(LSTM/GRU) · 插值与拟合 · 组合预测
+### Prediction and Forecasting — `models/prediction/`
+Grey Prediction · Time Series (ARIMA/SARIMA) · Regression Analysis · Markov Prediction · Neural Network Prediction · Deep Learning Prediction (LSTM/GRU) · Interpolation and Fitting · Combined Forecasting
 
-### 分类与判别 — `models/classification/`
-SVM · 决策树/随机森林 · XGBoost/LightGBM · 聚类(K-means/层次/DBSCAN) · Fisher判别 · 逻辑回归 · 集成学习(Stacking) · NLP基础 · 贝叶斯方法
+### Classification and Discrimination — `models/classification/`
+SVM · Decision Tree/Random Forest · XGBoost/LightGBM · Clustering (K-means/Hierarchical/DBSCAN) · Fisher Discriminant · Logistic Regression · Ensemble Learning (Stacking) · NLP Fundamentals · Bayesian Methods
 
-### 机理分析 — `models/differential/`
-ODE建模 · PDE数值解 · 稳定性分析 · 人口/生态模型 · 传染病模型(SIR/SEIR) · 扩散模型 · 量纲分析 · 运动学/动力学
+### Mechanistic Analysis — `models/differential/`
+ODE Modeling · PDE Numerical Solution · Stability Analysis · Population/Ecology Models · Epidemic Models (SIR/SEIR) · Diffusion Models · Dimensional Analysis · Kinematics/Dynamics
 
-### 统计与计量 — `models/statistics/`
-面板数据分析 · 双重差分(DID) · 断点回归(RDD) · 工具变量(IV) · 中介/调节效应 · 结构方程(SEM) · 空间计量 · 生存分析 · 合成控制法
+### Statistics and Econometrics — `models/statistics/`
+Panel Data Analysis · Difference-in-Differences (DID) · Regression Discontinuity (RDD) · Instrumental Variables (IV) · Mediation/Moderation Effects · Structural Equation Modeling (SEM) · Spatial Econometrics · Survival Analysis · Synthetic Control Method
 
-### 仿真与模拟 — `models/simulation/`
-蒙特卡洛模拟 · 系统动力学 · 元胞自动机 · Agent-Based建模 · Bootstrap
+### Simulation and Modeling — `models/simulation/`
+Monte Carlo Simulation · System Dynamics · Cellular Automata · Agent-Based Modeling · Bootstrap
 
-### 通用辅助 — `models/auxiliary/`
-灵敏性分析 · 数据预处理 · 特征工程 · 相关性分析 · 稳健性分析 · 不确定性分析
+### General Auxiliary — `models/auxiliary/`
+Sensitivity Analysis · Data Preprocessing · Feature Engineering · Correlation Analysis · Robustness Analysis · Uncertainty Analysis
+
+---
+
+<div align="center">
+  <a href="README.md">English</a> |
+  <a href="README.zh-CN.md">简体中文</a> |
+  <a href="README.zh-Hant.md">繁體中文</a> |
+  <a href="README.ja.md">日本語</a>
+</div>
